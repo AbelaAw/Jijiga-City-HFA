@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JIJIGA CITY  HFA</title>
+  <title>JIJIGA CITY HFA</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -70,6 +70,7 @@
       text-align: center;
       color: #fff;
       padding: 0 20px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .hero h1 {
@@ -77,12 +78,14 @@
       font-size: 60px;
       margin-bottom: 20px;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      animation: slideDown 1s ease-out;
     }
 
     .hero p {
       font-size: 24px;
       margin-bottom: 30px;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      animation: slideUp 1s ease-out;
     }
 
     .hero .btn {
@@ -97,6 +100,7 @@
     .hero .btn:hover {
       background: #f1c40f;
       color: #2c3e50;
+      transform: scale(1.1);
     }
 
     /* ===== Sections ===== */
@@ -110,6 +114,7 @@
       margin-bottom: 30px;
       text-align: center;
       color: #e74c3c;
+      animation: fadeIn 1s ease-in;
     }
 
     section p {
@@ -117,6 +122,7 @@
       max-width: 800px;
       margin: 0 auto 20px auto;
       line-height: 1.6;
+      animation: fadeIn 1s ease-in;
     }
 
     /* ===== Members Section ===== */
@@ -138,7 +144,7 @@
     }
 
     .member-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-10px) scale(1.05);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
@@ -153,12 +159,49 @@
       margin-bottom: 5px;
     }
 
+    /* ===== Gallery Section ===== */
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+      scroll-behavior: smooth;
+    }
+
+    .gallery img {
+      flex: 0 0 auto;
+      width: 300px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
     /* ===== Footer ===== */
     footer {
       background: #2c3e50;
       color: #f1c40f;
       text-align: center;
       padding: 30px 20px;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     /* ===== Responsive ===== */
@@ -182,6 +225,10 @@
       section {
         padding: 70px 20px;
       }
+
+      .gallery img {
+        width: 200px;
+      }
     }
 
   </style>
@@ -196,6 +243,7 @@
       <a href="#members">Members</a>
       <a href="#rules">Rules</a>
       <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -210,4 +258,61 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>JIJIGA CITY HFA is a foo
+    <p>JIJIGA CITY HFA is a football union that brings together active members who love football and value health and teamwork. Our mission is to promote football activities and create a community that thrives on sportsmanship, health, and discipline.</p>
+  </section>
+
+  <!-- Members Section -->
+  <section id="members">
+    <h2>Our Members</h2>
+    <div class="members">
+      <div class="member-card">
+        <img src="member1.jpg" alt="Member Name">
+        <h3>Member 1</h3>
+        <p>Role / Position</p>
+      </div>
+      <div class="member-card">
+        <img src="member2.jpg" alt="Member Name">
+        <h3>Member 2</h3>
+        <p>Role / Position</p>
+      </div>
+      <!-- Add more member cards here -->
+    </div>
+  </section>
+
+  <!-- Rules Section -->
+  <section id="rules">
+    <h2>Rules & Regulations</h2>
+    <p>All members are expected to follow the code of conduct, attend training sessions regularly, and participate actively in matches. Health, respect, and sportsmanship are core values we uphold.</p>
+  </section>
+
+  <!-- Events Section -->
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <p>Stay tuned for upcoming football matches, training sessions, and community events. We encourage all members and fans to participate and cheer for the team!</p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="event1.jpg" alt="Event 1">
+      <img src="event2.jpg" alt="Event 2">
+      <img src="event3.jpg" alt="Event 3">
+      <!-- Add more gallery images -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@jijigacityhfa.com</p>
+    <p>Follow us on social media: Facebook | Twitter | Instagram</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 JIJIGA CITY HFA | All rights reserved
+  </footer>
+
+</body>
+</html>
